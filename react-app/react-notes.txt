@@ -1,0 +1,109 @@
+>>Step:
+	>>Creating React app through this command: npx create-react-app <appName>
+		>>if an error is encountered:
+			>> npm uninstall -g create-react-app
+		>> if the error is create-react-app command not found
+			>> npm install create-react-app
+
+>>For Clean Slate:
+	1. Remove the following files
+		App.test.js
+		index.css
+		logo.svg
+		reportWebVitals.js
+
+	2. Remove the importations in index.js such as the css and reportWebVitals
+
+	3. Remove the importation of logo in App.js and the return div
+
+>>Installing Javascript(Babel)-code readability
+
+	1. ctrl + shift + p
+	2. type install
+	3. select Package Control: Install Package
+	4. On the lower left, you will see loading repositories
+	5. type in babel
+	6. select the first option
+	7. once installed, on the lower right of your sublime editor, find the languages available and click Javascript(Babel) or JSX
+
+>>JSX (JavaScript XML)
+	>>HTML-like codes
+	>>The difference between the HTML codes is that you can insert a Javascript logic in it.
+
+	>HTML<
+
+		<button disabled></button>
+
+	>JSX<
+
+		<button {if(){
+		}
+		else{
+
+		}></button>
+
+>>In React, you may also install dependencies through npm such bootstrap and react-bootstrap
+	>>Command with versions: npm i bootstrap@5.1.3 react-bootstrap@2.0.2
+		>> You may also downgrade your version installation
+		>> Recommended: use the LTS version
+
+
+>>React Process
+	>Mounting
+		>>displays the component
+	>Rendering
+		>>process of invoking a component returning a set of instructions
+
+>>Two Types of React
+	>Function
+	sample: export default function AppNavBar(){
+		return(
+
+
+		)
+	}
+
+	>ES6 Update
+	sample: const AppNavBar = () => {
+		return(
+
+		)
+	}
+	export default AppNavbar;
+
+	>Class-based
+	sample: 
+	export default class AppNavBar extends Component{
+		render(){
+			return{
+				
+			}
+		}
+	}
+
+>>Organizing import modules
+	1. import built-in react modules
+		>>like React and Fragment
+	2. import installed/ downloaded packages
+		>>react-bootstrap, swal(sweetalert2)
+	3. import from user-defined components
+		>> components, pages
+
+>>React follows Pascal Case in terms of naming conventions
+	>>capitalized letters for all words of the function AND the file name associated with it.
+
+>>React is a SPA
+	>>Single Page Application
+
+>>Props
+	>>short term for 'properties'
+	>>props are like parameters that holds data of a certain object
+	>>typeof data of props is an object
+
+>>States
+	>>Syntax: const [getter, setter] = useState(initialValueOfGetter)
+	>>State Hook are used to keep track of information related to individual components
+	>>Using the state hook, it returns an aray with the first element being a value and the second element as a function that's used to change the value of the first element
+	>>By default, Javascript is synchronous, the setter function however is asynchronous. This allows the setter to execute separately from other codes in the program
+
+>>
