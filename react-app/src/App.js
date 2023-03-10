@@ -20,6 +20,8 @@ import {UserProvider} from './UserContext';
 // [SECTION] PROVIDER
 function App() {
 
+  const baseURL = process.env.REACT_APP_BASE_URL; 
+
   const [user, setUser] = useState({
     id: null,
     isAdmin: null
@@ -31,7 +33,7 @@ const unsetUser = () => {
 
 useEffect(() => {
 
-  fetch("http://localhost:4000/users/getUserDetails", {
+  fetch(`${baseURL}/users/getUserDetails`, {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`
     }
@@ -57,7 +59,7 @@ useEffect(() => {
 
   })
 
-}, [])
+}, [baseURL])
 
 
 // [SECTION] RENDERING

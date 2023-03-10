@@ -4,7 +4,9 @@ import {Navigate, Link} from 'react-router-dom';
 import UserContext from '../UserContext';
 import Swal from 'sweetalert2';
 
-export default function Login(props){
+export default function Login(){
+
+	const baseURL = process.env.REACT_APP_BASE_URL;
 
 	const Alert = Swal.mixin({
 	  toast: true,
@@ -28,7 +30,7 @@ export default function Login(props){
 
 		e.preventDefault();
 
-		fetch("http://localhost:4000/users/login", {
+		fetch(`${baseURL}/users/login`, {
 			method: "POST",
 			headers: {
 				"Content-Type" : "application/json"
@@ -68,7 +70,7 @@ export default function Login(props){
 
 	const retrieveUserDetails = (token) => {
 
-		fetch("http://localhost:4000/users/getUserDetails", {
+		fetch(`${baseURL}/users/getUserDetails`, {
 			headers: {
 				Authorization: `Bearer ${token}`
 			}

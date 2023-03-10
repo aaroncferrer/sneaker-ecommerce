@@ -6,6 +6,8 @@ import Swal from 'sweetalert2';
 
 export default function Register(){
 
+	const baseURL = process.env.REACT_APP_BASE_URL;
+
 	const {user} = useContext(UserContext);
 
 	const history = useNavigate();
@@ -35,7 +37,7 @@ export default function Register(){
 
 		e.preventDefault();
 
-		fetch("http://localhost:4000/users/checkEmailExists", {
+		fetch(`${baseURL}/users/checkEmailExists`, {
 			method: "POST",
 			headers: {
 				"Content-Type" : "application/json"
@@ -56,7 +58,7 @@ export default function Register(){
 
 			} else {
 
-				fetch("http://localhost:4000/users", {
+				fetch(`${baseURL}/users`, {
 					method: "POST",
 					headers: {
 						"Content-Type" : "application/json"

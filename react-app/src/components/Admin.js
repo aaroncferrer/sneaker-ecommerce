@@ -4,6 +4,8 @@ import Swal from 'sweetalert2';
 
 export default function Admin({adminProp, itemId}){
 
+	const baseURL = process.env.REACT_APP_BASE_URL;
+
 	const Alert = Swal.mixin({
 	  toast: true,
 	  position: 'top',
@@ -34,7 +36,7 @@ export default function Admin({adminProp, itemId}){
 
 		e.preventDefault();
 
-		fetch(`http://localhost:4000/items/updateItem/${itemId}`, {
+		fetch(`${baseURL}/items/updateItem/${itemId}`, {
 			method: "PUT",
 			headers: {
 				"Content-Type" : "application/json",
@@ -76,7 +78,7 @@ export default function Admin({adminProp, itemId}){
 
 		e.preventDefault();
 
-		fetch(`http://localhost:4000/items/archiveItem/${itemId}`, {
+		fetch(`${baseURL}/items/archiveItem/${itemId}`, {
 			method: "PUT",
 			headers: {
 				"Content-Type" : "application/json",
@@ -113,7 +115,7 @@ export default function Admin({adminProp, itemId}){
 
 		e.preventDefault();
 
-		fetch(`http://localhost:4000/items/activateItem/${itemId}`, {
+		fetch(`${baseURL}/items/activateItem/${itemId}`, {
 			method: "PUT",
 			headers: {
 				"Content-Type" : "application/json",

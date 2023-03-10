@@ -6,8 +6,10 @@ export default function Catalog(){
 
 	const [items, setItems] = useState([])
 
+	const baseURL = process.env.REACT_APP_BASE_URL; 
+
 	useEffect(() => {
-		fetch("http://localhost:4000/items/getAllActiveItems")
+		fetch(`${baseURL}/items/getAllActiveItems`)
 		.then(res => res.json())
 		.then(data => {
 			console.log(data)
@@ -19,7 +21,7 @@ export default function Catalog(){
 			}))
 		})
 
-	}, [])
+	}, [baseURL])
 
 	return(
 	<div
