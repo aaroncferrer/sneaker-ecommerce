@@ -4,6 +4,8 @@ import Admin from '../components/Admin'
 
 export default function AdminDash(){
 
+	const baseURL = process.env.REACT_APP_BASE_URL;
+
 	const [users, setUsers] = useState([]);
 	const [orders, setOrders] = useState([]);
 
@@ -22,21 +24,21 @@ export default function AdminDash(){
 	const [price, setPrice] = useState(0);
 
 	useEffect(() => {
-		fetch("http://localhost:4000/items")
+		fetch(`${baseURL}/items`)
 		.then(res => res.json())
 		.then(data => {
 			console.log(data)
 
 			setItems(data)
 
-			fetch("http://localhost:4000/users")
+			fetch(`${baseURL}/users`)
 			.then(res => res.json())
 			.then(data => {
 				console.log(data)
 
 				setUsers(data)
 
-				fetch("http://localhost:4000/orders/getAllOrders", {
+				fetch(`${baseURL}/orders/getAllOrders`, {
 					headers: {
 						Authorization : `Bearer ${localStorage.getItem("token")}`
 					}
@@ -54,14 +56,14 @@ export default function AdminDash(){
 			})
 		})
 
-	}, [])
+	}, [baseURL])
 
 
 	function createItem(e){
 
 		e.preventDefault();
 
-		fetch("http://localhost:4000/items/createItem", {
+		fetch(`${baseURL}/items/createItem`, {
 			method: "POST",
 			headers: {
 				"Content-Type" : "application/json",

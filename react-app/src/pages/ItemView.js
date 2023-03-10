@@ -7,6 +7,8 @@ import './ItemView.css';
 
 export default function ItemView(){
 
+	const baseURL = process.env.REACT_APP_BASE_URL; 
+
 	const Alert = Swal.mixin({
 	  toast: true,
 	  position: 'top',
@@ -74,7 +76,7 @@ export default function ItemView(){
 
 	useEffect(() => {
 
-		fetch(`http://localhost:4000/items/getSingleItem/${itemId}`)
+		fetch(`${baseURL}/items/getSingleItem/${itemId}`)
 		.then(res => res.json())
 		.then(data => {
 			console.log(data)
@@ -84,7 +86,7 @@ export default function ItemView(){
 			setDescription(data.description);
 		})
 
-	}, [itemId])
+	}, [itemId, baseURL])
 
 	return(
 
