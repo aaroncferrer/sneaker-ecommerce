@@ -32,7 +32,7 @@ The Sneaker E-commerce application provides the following functionalities:
 - Add items to the shopping cart (non-admin user only) *Feature currently unavailable*
 - View the current shopping cart and the total amount
 
-### Admin Features
+### Admin Features *anthony@mail.com | user123*
 - Add new sneakers to the catalog
 - Remove existing sneakers from the catalog
 - Update the details of existing sneakers in the catalog
